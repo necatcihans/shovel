@@ -1,0 +1,1762 @@
+{
+  "as_of": "2026-09-28",
+  "global_status": "CONTROLLED_PHASED_ROLLOUT_ACTIVE",
+  "real_orders_blocked_globally": true,
+  "active_modes_summary": {
+    "bist_equities": "ACTIVE_PRIMARY (Yeni quant motoru birincil, paper trading aktif)",
+    "us_equities": "SHADOW_PARALLEL (Model A & B paralel, çelişkide İZLEME)",
+    "crypto": "RESEARCH_AND_DATA_ONLY (İşlem kapalı, yalnızca veri/volatilite)"
+  },
+  "gate_checks": {
+    "same_date_range": true,
+    "same_snapshot_id_logic": true,
+    "same_cost_model": true,
+    "same_initial_capital": true,
+    "same_benchmark": true,
+    "same_position_size": true,
+    "same_frequency": true,
+    "same_raw_schema": true
+  },
+  "circuit_breaker": {
+    "bist": "HEALTHY",
+    "us": "HEALTHY",
+    "crypto": "HEALTHY"
+  },
+  "asset_decisions": [
+    {
+      "symbol": "THYAO.IS",
+      "asset_class": "bist_equities",
+      "rollout_mode": "ACTIVE_PRIMARY",
+      "final_decision": "İZLEME",
+      "decision_badge_class": "bg-amber-500/20 text-amber-300 border border-amber-500/40",
+      "decision_reason_code": "NEUTRAL_QUANT_SCORE",
+      "plain_turkish_explanation": "[BIST AKTİF QUANT] THYAO.IS için quant sinyalleri dengeli bölgede; net bir kırılma teyit edilene kadar İZLEME kararı geçerlidir. Bu değerlendirme günlük ve haftalık verilerle üretildi. Kısa vadeli gürültü yüksek olduğu için 1 saatlik göstergelerin ağırlığı azaltıldı.",
+      "model_version": "2.0.0-quant-primary",
+      "snapshot_id": "SNAP-THYAO.IS-1790631435",
+      "as_of": "2026-09-28",
+      "confidence": 0.82,
+      "data_quality_pct": 95.0,
+      "real_orders_blocked": true,
+      "paper_trade_logged": false,
+      "circuit_breaker_status": "HEALTHY",
+      "circuit_breaker_reason": null,
+      "gate_checks_verified": true,
+      "gate_details": {
+        "same_date_range": true,
+        "same_snapshot_id_logic": true,
+        "same_cost_model": true,
+        "same_initial_capital": true,
+        "same_benchmark": true,
+        "same_position_size": true,
+        "same_frequency": true,
+        "same_raw_schema": true
+      },
+      "model_b_quant": {
+        "symbol": "THYAO.IS",
+        "asset_class": "bist_equities",
+        "as_of": "2026-09-28",
+        "model_version": "2.0.0-quant-primary",
+        "data_quality_pct": 95.0,
+        "raw_quant_score": -0.063,
+        "final_quant_score": -0.063,
+        "confidence": 0.82,
+        "decision": "İZLEME",
+        "decision_reason_code": "NEUTRAL_QUANT_SCORE",
+        "plain_turkish_explanation": "THYAO.IS için quant sinyalleri dengeli bölgede; net bir kırılma teyit edilene kadar İZLEME kararı geçerlidir. Bu değerlendirme günlük ve haftalık verilerle üretildi. Kısa vadeli gürültü yüksek olduğu için 1 saatlik göstergelerin ağırlığı azaltıldı.",
+        "kalman": {
+          "filtered_price": 292.8467,
+          "trend_slope": 0.8019,
+          "trend_acceleration": -0.4237,
+          "measurement_noise": 0.003825,
+          "process_noise": 0.0001,
+          "kalman_confidence": 0.98,
+          "normalized_score": 0.499,
+          "direction": "UP"
+        },
+        "changepoint": {
+          "state": "trend_weakening",
+          "change_point_index": 117,
+          "change_point_date": null,
+          "cusum_statistic": 0.005,
+          "normalized_score": -0.6
+        },
+        "hurst": {
+          "hurst_exponent": 0.65,
+          "regime": "TRENDING",
+          "is_chop_veto": false,
+          "sample_size": 126,
+          "normalized_score": 0.38
+        },
+        "momentum": {
+          "raw_momentum_pct": -5.45,
+          "realized_volatility_pct": 38.43,
+          "vol_adjusted_momentum": -0.491,
+          "normalized_score": -0.241,
+          "horizon_days": 21
+        },
+        "tail_risk": {
+          "ewma_volatility_pct": 35.11,
+          "var_95_pct": -3.19,
+          "cvar_95_pct": -4.2,
+          "skewness": 0.6,
+          "kurtosis": 5.79,
+          "downside_deviation_pct": 20.33,
+          "max_drawdown_historical_pct": -21.61,
+          "is_cvar_veto": false,
+          "risk_penalty": 0.503
+        },
+        "portfolio_impact": {
+          "cluster_name": "BIST_EQUITIES_CLUSTER",
+          "average_correlation": 0.45,
+          "marginal_cvar_impact_pct": 1.2,
+          "concentration_weight_pct": 15.0,
+          "is_portfolio_veto": false
+        },
+        "macro": {
+          "regime": "RISK_ON",
+          "yield_curve_slope": 0.45,
+          "vix_level": 16.5,
+          "dollar_momentum": -0.5,
+          "normalized_score": 0.65
+        },
+        "timeframe_noise": {
+          "noise_ratio": 1.53,
+          "noise_regime": "ELEVATED_NOISE",
+          "short_term_score": -0.38,
+          "medium_term_score": -0.24,
+          "long_term_score": 0.07,
+          "is_timeframe_conflicted": false,
+          "active_timeframes": [
+            "15m",
+            "1h",
+            "4h",
+            "1d",
+            "1w"
+          ],
+          "timeframe_adaptation_note": "Bu değerlendirme günlük ve haftalık verilerle üretildi. Kısa vadeli gürültü yüksek olduğu için 1 saatlik göstergelerin ağırlığı azaltıldı."
+        },
+        "secondary_indicators": {
+          "rsi_14": 46.6,
+          "macd_histogram": -1.27,
+          "ema_trend": "BEARISH",
+          "bollinger_band_pct_b": 0.38,
+          "stochastic_k": 46.6,
+          "aggregate_secondary_score": -0.37,
+          "effective_weight": 0.025,
+          "description": "Klasik göstergeler (RSI, MACD, EMA) yalnızca destekleyici kanıttır; ana kararı değiştiremez."
+        },
+        "veto_flags": {
+          "hurst_chop_veto": false,
+          "cvar_critical_veto": false,
+          "timeframe_conflict_veto": false,
+          "extreme_noise_veto": false,
+          "portfolio_correlation_veto": false,
+          "quant_trend_negative_veto": false
+        }
+      },
+      "model_a_legacy": null,
+      "parallel_conflict": false,
+      "crypto_restrictions": null,
+      "entry_price": 290.75,
+      "stop_loss": 284.21,
+      "target_price": 303.83,
+      "risk_reward_ratio": 2.0
+    },
+    {
+      "symbol": "TUPRS.IS",
+      "asset_class": "bist_equities",
+      "rollout_mode": "ACTIVE_PRIMARY",
+      "final_decision": "KAÇIN",
+      "decision_badge_class": "bg-rose-500/20 text-rose-300 border border-rose-500/40",
+      "decision_reason_code": "TAIL_RISK_OR_TREND_VETO",
+      "plain_turkish_explanation": "[BIST AKTİF QUANT] TUPRS.IS için Kalman trend yönü belirgin negatif ve quant göstergeler zayıf; pozisyon riski nedeniyle KAÇIN üretildi.",
+      "model_version": "2.0.0-quant-primary",
+      "snapshot_id": "SNAP-TUPRS.IS-1790631435",
+      "as_of": "2026-09-28",
+      "confidence": 0.67,
+      "data_quality_pct": 95.0,
+      "real_orders_blocked": true,
+      "paper_trade_logged": false,
+      "circuit_breaker_status": "HEALTHY",
+      "circuit_breaker_reason": null,
+      "gate_checks_verified": true,
+      "gate_details": {
+        "same_date_range": true,
+        "same_snapshot_id_logic": true,
+        "same_cost_model": true,
+        "same_initial_capital": true,
+        "same_benchmark": true,
+        "same_position_size": true,
+        "same_frequency": true,
+        "same_raw_schema": true
+      },
+      "model_b_quant": {
+        "symbol": "TUPRS.IS",
+        "asset_class": "bist_equities",
+        "as_of": "2026-09-28",
+        "model_version": "2.0.0-quant-primary",
+        "data_quality_pct": 95.0,
+        "raw_quant_score": -0.132,
+        "final_quant_score": -0.132,
+        "confidence": 0.67,
+        "decision": "KAÇIN",
+        "decision_reason_code": "TAIL_RISK_OR_TREND_VETO",
+        "plain_turkish_explanation": "TUPRS.IS için Kalman trend yönü belirgin negatif ve quant göstergeler zayıf; pozisyon riski nedeniyle KAÇIN üretildi.",
+        "kalman": {
+          "filtered_price": 406.6185,
+          "trend_slope": -0.9883,
+          "trend_acceleration": -0.1688,
+          "measurement_noise": 0.00225,
+          "process_noise": 0.0001,
+          "kalman_confidence": 0.98,
+          "normalized_score": -0.451,
+          "direction": "DOWN"
+        },
+        "changepoint": {
+          "state": "trend_weakening",
+          "change_point_index": 101,
+          "change_point_date": null,
+          "cusum_statistic": 0.0032,
+          "normalized_score": -0.6
+        },
+        "hurst": {
+          "hurst_exponent": 0.699,
+          "regime": "TRENDING",
+          "is_chop_veto": false,
+          "sample_size": 126,
+          "normalized_score": 0.5
+        },
+        "momentum": {
+          "raw_momentum_pct": 2.53,
+          "realized_volatility_pct": 32.71,
+          "vol_adjusted_momentum": 0.267,
+          "normalized_score": 0.133,
+          "horizon_days": 21
+        },
+        "tail_risk": {
+          "ewma_volatility_pct": 40.19,
+          "var_95_pct": -3.7,
+          "cvar_95_pct": -4.81,
+          "skewness": -0.03,
+          "kurtosis": 3.06,
+          "downside_deviation_pct": 24.81,
+          "max_drawdown_historical_pct": -21.31,
+          "is_cvar_veto": false,
+          "risk_penalty": 0.575
+        },
+        "portfolio_impact": {
+          "cluster_name": "BIST_EQUITIES_CLUSTER",
+          "average_correlation": 0.45,
+          "marginal_cvar_impact_pct": 1.2,
+          "concentration_weight_pct": 15.0,
+          "is_portfolio_veto": false
+        },
+        "macro": {
+          "regime": "RISK_ON",
+          "yield_curve_slope": 0.45,
+          "vix_level": 16.5,
+          "dollar_momentum": -0.5,
+          "normalized_score": 0.65
+        },
+        "timeframe_noise": {
+          "noise_ratio": 0.9,
+          "noise_regime": "NORMAL",
+          "short_term_score": 0.53,
+          "medium_term_score": -0.34,
+          "long_term_score": 1.0,
+          "is_timeframe_conflicted": false,
+          "active_timeframes": [
+            "15m",
+            "1h",
+            "4h",
+            "1d",
+            "1w"
+          ],
+          "timeframe_adaptation_note": "Piyasa gürültüsü dengeli bantta; tüm zaman dilimleri aktif."
+        },
+        "secondary_indicators": {
+          "rsi_14": 56.1,
+          "macd_histogram": 3.01,
+          "ema_trend": "BULLISH",
+          "bollinger_band_pct_b": 0.52,
+          "stochastic_k": 56.1,
+          "aggregate_secondary_score": 0.37,
+          "effective_weight": 0.05,
+          "description": "Klasik göstergeler (RSI, MACD, EMA) yalnızca destekleyici kanıttır; ana kararı değiştiremez."
+        },
+        "veto_flags": {
+          "hurst_chop_veto": false,
+          "cvar_critical_veto": false,
+          "timeframe_conflict_veto": false,
+          "extreme_noise_veto": false,
+          "portfolio_correlation_veto": false,
+          "quant_trend_negative_veto": true
+        }
+      },
+      "model_a_legacy": null,
+      "parallel_conflict": false,
+      "crypto_restrictions": null,
+      "entry_price": 406.0,
+      "stop_loss": 393.82,
+      "target_price": 430.36,
+      "risk_reward_ratio": 2.0
+    },
+    {
+      "symbol": "BIMAS.IS",
+      "asset_class": "bist_equities",
+      "rollout_mode": "ACTIVE_PRIMARY",
+      "final_decision": "İZLEME",
+      "decision_badge_class": "bg-amber-500/20 text-amber-300 border border-amber-500/40",
+      "decision_reason_code": "NEUTRAL_QUANT_SCORE",
+      "plain_turkish_explanation": "[BIST AKTİF QUANT] BIMAS.IS için quant sinyalleri dengeli bölgede; net bir kırılma teyit edilene kadar İZLEME kararı geçerlidir. Piyasa gürültüsü dengeli bantta; tüm zaman dilimleri aktif.",
+      "model_version": "2.0.0-quant-primary",
+      "snapshot_id": "SNAP-BIMAS.IS-1790631435",
+      "as_of": "2026-09-28",
+      "confidence": 0.72,
+      "data_quality_pct": 95.0,
+      "real_orders_blocked": true,
+      "paper_trade_logged": false,
+      "circuit_breaker_status": "HEALTHY",
+      "circuit_breaker_reason": null,
+      "gate_checks_verified": true,
+      "gate_details": {
+        "same_date_range": true,
+        "same_snapshot_id_logic": true,
+        "same_cost_model": true,
+        "same_initial_capital": true,
+        "same_benchmark": true,
+        "same_position_size": true,
+        "same_frequency": true,
+        "same_raw_schema": true
+      },
+      "model_b_quant": {
+        "symbol": "BIMAS.IS",
+        "asset_class": "bist_equities",
+        "as_of": "2026-09-28",
+        "model_version": "2.0.0-quant-primary",
+        "data_quality_pct": 95.0,
+        "raw_quant_score": 0.208,
+        "final_quant_score": 0.208,
+        "confidence": 0.72,
+        "decision": "İZLEME",
+        "decision_reason_code": "NEUTRAL_QUANT_SCORE",
+        "plain_turkish_explanation": "BIMAS.IS için quant sinyalleri dengeli bölgede; net bir kırılma teyit edilene kadar İZLEME kararı geçerlidir. Piyasa gürültüsü dengeli bantta; tüm zaman dilimleri aktif.",
+        "kalman": {
+          "filtered_price": 428.3294,
+          "trend_slope": 0.6412,
+          "trend_acceleration": -0.8582,
+          "measurement_noise": 0.002825,
+          "process_noise": 0.0001,
+          "kalman_confidence": 0.98,
+          "normalized_score": 0.291,
+          "direction": "UP"
+        },
+        "changepoint": {
+          "state": "trend_start",
+          "change_point_index": 98,
+          "change_point_date": null,
+          "cusum_statistic": 0.0053,
+          "normalized_score": 0.8
+        },
+        "hurst": {
+          "hurst_exponent": 0.486,
+          "regime": "CHOP_RANDOM",
+          "is_chop_veto": true,
+          "sample_size": 128,
+          "normalized_score": 0.0
+        },
+        "momentum": {
+          "raw_momentum_pct": 2.84,
+          "realized_volatility_pct": 26.78,
+          "vol_adjusted_momentum": 0.368,
+          "normalized_score": 0.182,
+          "horizon_days": 21
+        },
+        "tail_risk": {
+          "ewma_volatility_pct": 28.88,
+          "var_95_pct": -2.62,
+          "cvar_95_pct": -3.26,
+          "skewness": 0.41,
+          "kurtosis": 3.27,
+          "downside_deviation_pct": 15.44,
+          "max_drawdown_historical_pct": -13.32,
+          "is_cvar_veto": false,
+          "risk_penalty": 0.404
+        },
+        "portfolio_impact": {
+          "cluster_name": "BIST_EQUITIES_CLUSTER",
+          "average_correlation": 0.45,
+          "marginal_cvar_impact_pct": 1.2,
+          "concentration_weight_pct": 15.0,
+          "is_portfolio_veto": false
+        },
+        "macro": {
+          "regime": "RISK_ON",
+          "yield_curve_slope": 0.45,
+          "vix_level": 16.5,
+          "dollar_momentum": -0.5,
+          "normalized_score": 0.65
+        },
+        "timeframe_noise": {
+          "noise_ratio": 1.13,
+          "noise_regime": "NORMAL",
+          "short_term_score": 0.42,
+          "medium_term_score": -0.08,
+          "long_term_score": 0.99,
+          "is_timeframe_conflicted": false,
+          "active_timeframes": [
+            "15m",
+            "1h",
+            "4h",
+            "1d",
+            "1w"
+          ],
+          "timeframe_adaptation_note": "Piyasa gürültüsü dengeli bantta; tüm zaman dilimleri aktif."
+        },
+        "secondary_indicators": {
+          "rsi_14": 55.1,
+          "macd_histogram": 1.65,
+          "ema_trend": "BULLISH",
+          "bollinger_band_pct_b": 0.64,
+          "stochastic_k": 55.1,
+          "aggregate_secondary_score": 0.41,
+          "effective_weight": 0.05,
+          "description": "Klasik göstergeler (RSI, MACD, EMA) yalnızca destekleyici kanıttır; ana kararı değiştiremez."
+        },
+        "veto_flags": {
+          "hurst_chop_veto": true,
+          "cvar_critical_veto": false,
+          "timeframe_conflict_veto": false,
+          "extreme_noise_veto": false,
+          "portfolio_correlation_veto": false,
+          "quant_trend_negative_veto": false
+        }
+      },
+      "model_a_legacy": null,
+      "parallel_conflict": false,
+      "crypto_restrictions": null,
+      "entry_price": 424.75,
+      "stop_loss": 415.19,
+      "target_price": 443.86,
+      "risk_reward_ratio": 2.0
+    },
+    {
+      "symbol": "EREGL.IS",
+      "asset_class": "bist_equities",
+      "rollout_mode": "ACTIVE_PRIMARY",
+      "final_decision": "İZLEME",
+      "decision_badge_class": "bg-amber-500/20 text-amber-300 border border-amber-500/40",
+      "decision_reason_code": "NEUTRAL_QUANT_SCORE",
+      "plain_turkish_explanation": "[BIST AKTİF QUANT] EREGL.IS için quant sinyalleri dengeli bölgede; net bir kırılma teyit edilene kadar İZLEME kararı geçerlidir. Bu değerlendirme günlük ve haftalık verilerle üretildi. Kısa vadeli gürültü yüksek olduğu için 1 saatlik göstergelerin ağırlığı azaltıldı.",
+      "model_version": "2.0.0-quant-primary",
+      "snapshot_id": "SNAP-EREGL.IS-1790631436",
+      "as_of": "2026-09-28",
+      "confidence": 0.48,
+      "data_quality_pct": 95.0,
+      "real_orders_blocked": true,
+      "paper_trade_logged": false,
+      "circuit_breaker_status": "HEALTHY",
+      "circuit_breaker_reason": null,
+      "gate_checks_verified": true,
+      "gate_details": {
+        "same_date_range": true,
+        "same_snapshot_id_logic": true,
+        "same_cost_model": true,
+        "same_initial_capital": true,
+        "same_benchmark": true,
+        "same_position_size": true,
+        "same_frequency": true,
+        "same_raw_schema": true
+      },
+      "model_b_quant": {
+        "symbol": "EREGL.IS",
+        "asset_class": "bist_equities",
+        "as_of": "2026-09-28",
+        "model_version": "2.0.0-quant-primary",
+        "data_quality_pct": 95.0,
+        "raw_quant_score": -0.033,
+        "final_quant_score": -0.033,
+        "confidence": 0.48,
+        "decision": "İZLEME",
+        "decision_reason_code": "NEUTRAL_QUANT_SCORE",
+        "plain_turkish_explanation": "EREGL.IS için quant sinyalleri dengeli bölgede; net bir kırılma teyit edilene kadar İZLEME kararı geçerlidir. Bu değerlendirme günlük ve haftalık verilerle üretildi. Kısa vadeli gürültü yüksek olduğu için 1 saatlik göstergelerin ağırlığı azaltıldı.",
+        "kalman": {
+          "filtered_price": 37.7976,
+          "trend_slope": 0.2261,
+          "trend_acceleration": -0.0119,
+          "measurement_noise": 0.003675,
+          "process_noise": 0.0001,
+          "kalman_confidence": 0.98,
+          "normalized_score": 0.833,
+          "direction": "UP"
+        },
+        "changepoint": {
+          "state": "trend_weakening",
+          "change_point_index": 117,
+          "change_point_date": null,
+          "cusum_statistic": 0.0,
+          "normalized_score": -0.6
+        },
+        "hurst": {
+          "hurst_exponent": 0.579,
+          "regime": "TRENDING",
+          "is_chop_veto": false,
+          "sample_size": 126,
+          "normalized_score": 0.2
+        },
+        "momentum": {
+          "raw_momentum_pct": -3.63,
+          "realized_volatility_pct": 45.92,
+          "vol_adjusted_momentum": -0.274,
+          "normalized_score": -0.136,
+          "horizon_days": 21
+        },
+        "tail_risk": {
+          "ewma_volatility_pct": 42.68,
+          "var_95_pct": -3.32,
+          "cvar_95_pct": -5.99,
+          "skewness": -0.28,
+          "kurtosis": 5.41,
+          "downside_deviation_pct": 30.69,
+          "max_drawdown_historical_pct": -21.31,
+          "is_cvar_veto": false,
+          "risk_penalty": 0.655
+        },
+        "portfolio_impact": {
+          "cluster_name": "BIST_EQUITIES_CLUSTER",
+          "average_correlation": 0.45,
+          "marginal_cvar_impact_pct": 1.2,
+          "concentration_weight_pct": 15.0,
+          "is_portfolio_veto": false
+        },
+        "macro": {
+          "regime": "RISK_ON",
+          "yield_curve_slope": 0.45,
+          "vix_level": 16.5,
+          "dollar_momentum": -0.5,
+          "normalized_score": 0.65
+        },
+        "timeframe_noise": {
+          "noise_ratio": 1.47,
+          "noise_regime": "ELEVATED_NOISE",
+          "short_term_score": -0.29,
+          "medium_term_score": -0.41,
+          "long_term_score": 1.0,
+          "is_timeframe_conflicted": true,
+          "active_timeframes": [
+            "15m",
+            "1h",
+            "4h",
+            "1d",
+            "1w"
+          ],
+          "timeframe_adaptation_note": "Bu değerlendirme günlük ve haftalık verilerle üretildi. Kısa vadeli gürültü yüksek olduğu için 1 saatlik göstergelerin ağırlığı azaltıldı."
+        },
+        "secondary_indicators": {
+          "rsi_14": 47.6,
+          "macd_histogram": -0.92,
+          "ema_trend": "BEARISH",
+          "bollinger_band_pct_b": 0.47,
+          "stochastic_k": 47.6,
+          "aggregate_secondary_score": -0.27,
+          "effective_weight": 0.025,
+          "description": "Klasik göstergeler (RSI, MACD, EMA) yalnızca destekleyici kanıttır; ana kararı değiştiremez."
+        },
+        "veto_flags": {
+          "hurst_chop_veto": false,
+          "cvar_critical_veto": false,
+          "timeframe_conflict_veto": true,
+          "extreme_noise_veto": false,
+          "portfolio_correlation_veto": false,
+          "quant_trend_negative_veto": false
+        }
+      },
+      "model_a_legacy": null,
+      "parallel_conflict": false,
+      "crypto_restrictions": null,
+      "entry_price": 37.7400016784668,
+      "stop_loss": 36.89,
+      "target_price": 39.44,
+      "risk_reward_ratio": 2.0
+    },
+    {
+      "symbol": "NVDA",
+      "asset_class": "us_equities",
+      "rollout_mode": "SHADOW_PARALLEL",
+      "final_decision": "İZLEME",
+      "decision_badge_class": "bg-amber-500/20 text-amber-300 border border-amber-500/40",
+      "decision_reason_code": "MODEL_A_B_PARALLEL_CONFLICT",
+      "plain_turkish_explanation": "NVDA için Yeni Quant Modeli (İZLEME) ile Eski Model (BUY) çelişmektedir. Risk yönetişimi gereği karar otomatik olarak İZLEME seviyesine çekilmiştir. Yeni model en az 30 ek OOS sinyali tamamlayana kadar çift model mutabakatı aranmaktadır.",
+      "model_version": "2.0.0-quant-primary (Parallel Shadow)",
+      "snapshot_id": "SNAP-NVDA-1790631436",
+      "as_of": "2026-09-28",
+      "confidence": 0.6885,
+      "data_quality_pct": 95.0,
+      "real_orders_blocked": true,
+      "paper_trade_logged": false,
+      "circuit_breaker_status": "HEALTHY",
+      "circuit_breaker_reason": null,
+      "gate_checks_verified": true,
+      "gate_details": {
+        "same_date_range": true,
+        "same_snapshot_id_logic": true,
+        "same_cost_model": true,
+        "same_initial_capital": true,
+        "same_benchmark": true,
+        "same_position_size": true,
+        "same_frequency": true,
+        "same_raw_schema": true
+      },
+      "model_b_quant": {
+        "symbol": "NVDA",
+        "asset_class": "us_equities",
+        "as_of": "2026-09-28",
+        "model_version": "2.0.0-quant-primary",
+        "data_quality_pct": 95.0,
+        "raw_quant_score": 0.261,
+        "final_quant_score": 0.261,
+        "confidence": 0.81,
+        "decision": "İZLEME",
+        "decision_reason_code": "NEUTRAL_QUANT_SCORE",
+        "plain_turkish_explanation": "NVDA için quant sinyalleri dengeli bölgede; net bir kırılma teyit edilene kadar İZLEME kararı geçerlidir. Gürültü oranı düşük; trend akışı temiz ve güvenilir.",
+        "kalman": {
+          "filtered_price": 228.3462,
+          "trend_slope": 0.5261,
+          "trend_acceleration": 0.1971,
+          "measurement_noise": 0.00125,
+          "process_noise": 0.0001,
+          "kalman_confidence": 0.98,
+          "normalized_score": 0.431,
+          "direction": "UP"
+        },
+        "changepoint": {
+          "state": "trend_start",
+          "change_point_index": 103,
+          "change_point_date": null,
+          "cusum_statistic": 0.0015,
+          "normalized_score": 0.8
+        },
+        "hurst": {
+          "hurst_exponent": 0.553,
+          "regime": "TRENDING",
+          "is_chop_veto": false,
+          "sample_size": 126,
+          "normalized_score": 0.13
+        },
+        "momentum": {
+          "raw_momentum_pct": 5.32,
+          "realized_volatility_pct": 27.19,
+          "vol_adjusted_momentum": 0.677,
+          "normalized_score": 0.326,
+          "horizon_days": 21
+        },
+        "tail_risk": {
+          "ewma_volatility_pct": 36.45,
+          "var_95_pct": -3.62,
+          "cvar_95_pct": -4.67,
+          "skewness": 0.21,
+          "kurtosis": 3.55,
+          "downside_deviation_pct": 22.56,
+          "max_drawdown_historical_pct": -19.3,
+          "is_cvar_veto": false,
+          "risk_penalty": 0.537
+        },
+        "portfolio_impact": {
+          "cluster_name": "US_EQUITIES_CLUSTER",
+          "average_correlation": 0.45,
+          "marginal_cvar_impact_pct": 1.2,
+          "concentration_weight_pct": 15.0,
+          "is_portfolio_veto": false
+        },
+        "macro": {
+          "regime": "RISK_ON",
+          "yield_curve_slope": 0.45,
+          "vix_level": 16.5,
+          "dollar_momentum": -0.5,
+          "normalized_score": 0.65
+        },
+        "timeframe_noise": {
+          "noise_ratio": 0.49,
+          "noise_regime": "LOW_NOISE",
+          "short_term_score": 0.29,
+          "medium_term_score": 0.83,
+          "long_term_score": 1.0,
+          "is_timeframe_conflicted": false,
+          "active_timeframes": [
+            "15m",
+            "1h",
+            "4h",
+            "1d",
+            "1w"
+          ],
+          "timeframe_adaptation_note": "Gürültü oranı düşük; trend akışı temiz ve güvenilir."
+        },
+        "secondary_indicators": {
+          "rsi_14": 54.1,
+          "macd_histogram": 1.16,
+          "ema_trend": "BULLISH",
+          "bollinger_band_pct_b": 0.8,
+          "stochastic_k": 54.1,
+          "aggregate_secondary_score": 0.46,
+          "effective_weight": 0.05,
+          "description": "Klasik göstergeler (RSI, MACD, EMA) yalnızca destekleyici kanıttır; ana kararı değiştiremez."
+        },
+        "veto_flags": {
+          "hurst_chop_veto": false,
+          "cvar_critical_veto": false,
+          "timeframe_conflict_veto": false,
+          "extreme_noise_veto": false,
+          "portfolio_correlation_veto": false,
+          "quant_trend_negative_veto": false
+        }
+      },
+      "model_a_legacy": {
+        "model_name": "Model A (Legacy RSI/MACD/Momentum)",
+        "decision": "BUY",
+        "active_comparison": true,
+        "target_oos_signals_left": 30
+      },
+      "parallel_conflict": true,
+      "crypto_restrictions": null,
+      "entry_price": 228.86000061035156,
+      "stop_loss": 223.71,
+      "target_price": 239.16,
+      "risk_reward_ratio": 2.0
+    },
+    {
+      "symbol": "AAPL",
+      "asset_class": "us_equities",
+      "rollout_mode": "SHADOW_PARALLEL",
+      "final_decision": "İZLEME",
+      "decision_badge_class": "bg-amber-500/20 text-amber-300 border border-amber-500/40",
+      "decision_reason_code": "NEUTRAL_QUANT_SCORE",
+      "plain_turkish_explanation": "[ABD PARALEL MOD] Yeni model: İZLEME, Eski model: PASS. AAPL için quant sinyalleri dengeli bölgede; net bir kırılma teyit edilene kadar İZLEME kararı geçerlidir. Gürültü oranı düşük; trend akışı temiz ve güvenilir.",
+      "model_version": "2.0.0-quant-primary (Parallel Shadow)",
+      "snapshot_id": "SNAP-AAPL-1790631436",
+      "as_of": "2026-09-28",
+      "confidence": 0.86,
+      "data_quality_pct": 95.0,
+      "real_orders_blocked": true,
+      "paper_trade_logged": false,
+      "circuit_breaker_status": "HEALTHY",
+      "circuit_breaker_reason": null,
+      "gate_checks_verified": true,
+      "gate_details": {
+        "same_date_range": true,
+        "same_snapshot_id_logic": true,
+        "same_cost_model": true,
+        "same_initial_capital": true,
+        "same_benchmark": true,
+        "same_position_size": true,
+        "same_frequency": true,
+        "same_raw_schema": true
+      },
+      "model_b_quant": {
+        "symbol": "AAPL",
+        "asset_class": "us_equities",
+        "as_of": "2026-09-28",
+        "model_version": "2.0.0-quant-primary",
+        "data_quality_pct": 95.0,
+        "raw_quant_score": 0.078,
+        "final_quant_score": 0.078,
+        "confidence": 0.86,
+        "decision": "İZLEME",
+        "decision_reason_code": "NEUTRAL_QUANT_SCORE",
+        "plain_turkish_explanation": "AAPL için quant sinyalleri dengeli bölgede; net bir kırılma teyit edilene kadar İZLEME kararı geçerlidir. Gürültü oranı düşük; trend akışı temiz ve güvenilir.",
+        "kalman": {
+          "filtered_price": 339.14,
+          "trend_slope": 0.0232,
+          "trend_acceleration": -0.2481,
+          "measurement_noise": 0.001575,
+          "process_noise": 0.0001,
+          "kalman_confidence": 0.98,
+          "normalized_score": 0.014,
+          "direction": "FLAT"
+        },
+        "changepoint": {
+          "state": "trend_weakening",
+          "change_point_index": 84,
+          "change_point_date": null,
+          "cusum_statistic": 0.0019,
+          "normalized_score": -0.6
+        },
+        "hurst": {
+          "hurst_exponent": 0.658,
+          "regime": "TRENDING",
+          "is_chop_veto": false,
+          "sample_size": 126,
+          "normalized_score": 0.4
+        },
+        "momentum": {
+          "raw_momentum_pct": 5.85,
+          "realized_volatility_pct": 21.67,
+          "vol_adjusted_momentum": 0.935,
+          "normalized_score": 0.436,
+          "horizon_days": 21
+        },
+        "tail_risk": {
+          "ewma_volatility_pct": 24.16,
+          "var_95_pct": -1.89,
+          "cvar_95_pct": -3.77,
+          "skewness": -0.77,
+          "kurtosis": 6.52,
+          "downside_deviation_pct": 21.0,
+          "max_drawdown_historical_pct": -12.71,
+          "is_cvar_veto": false,
+          "risk_penalty": 0.39
+        },
+        "portfolio_impact": {
+          "cluster_name": "US_EQUITIES_CLUSTER",
+          "average_correlation": 0.45,
+          "marginal_cvar_impact_pct": 1.2,
+          "concentration_weight_pct": 15.0,
+          "is_portfolio_veto": false
+        },
+        "macro": {
+          "regime": "RISK_ON",
+          "yield_curve_slope": 0.45,
+          "vix_level": 16.5,
+          "dollar_momentum": -0.5,
+          "normalized_score": 0.65
+        },
+        "timeframe_noise": {
+          "noise_ratio": 0.63,
+          "noise_regime": "LOW_NOISE",
+          "short_term_score": 0.89,
+          "medium_term_score": 0.31,
+          "long_term_score": 1.0,
+          "is_timeframe_conflicted": false,
+          "active_timeframes": [
+            "15m",
+            "1h",
+            "4h",
+            "1d",
+            "1w"
+          ],
+          "timeframe_adaptation_note": "Gürültü oranı düşük; trend akışı temiz ve güvenilir."
+        },
+        "secondary_indicators": {
+          "rsi_14": 76.3,
+          "macd_histogram": 1.8,
+          "ema_trend": "BULLISH",
+          "bollinger_band_pct_b": 0.75,
+          "stochastic_k": 76.3,
+          "aggregate_secondary_score": 0.58,
+          "effective_weight": 0.05,
+          "description": "Klasik göstergeler (RSI, MACD, EMA) yalnızca destekleyici kanıttır; ana kararı değiştiremez."
+        },
+        "veto_flags": {
+          "hurst_chop_veto": false,
+          "cvar_critical_veto": false,
+          "timeframe_conflict_veto": false,
+          "extreme_noise_veto": false,
+          "portfolio_correlation_veto": false,
+          "quant_trend_negative_veto": false
+        }
+      },
+      "model_a_legacy": {
+        "model_name": "Model A (Legacy RSI/MACD/Momentum)",
+        "decision": "PASS",
+        "active_comparison": true,
+        "target_oos_signals_left": 30
+      },
+      "parallel_conflict": false,
+      "crypto_restrictions": null,
+      "entry_price": 338.3999938964844,
+      "stop_loss": 330.79,
+      "target_price": 353.63,
+      "risk_reward_ratio": 2.0
+    },
+    {
+      "symbol": "MU",
+      "asset_class": "us_equities",
+      "rollout_mode": "SHADOW_PARALLEL",
+      "final_decision": "İZLEME",
+      "decision_badge_class": "bg-amber-500/20 text-amber-300 border border-amber-500/40",
+      "decision_reason_code": "MODEL_A_B_PARALLEL_CONFLICT",
+      "plain_turkish_explanation": "MU için Yeni Quant Modeli (KAÇIN) ile Eski Model (BUY) çelişmektedir. Risk yönetişimi gereği karar otomatik olarak İZLEME seviyesine çekilmiştir. Yeni model en az 30 ek OOS sinyali tamamlayana kadar çift model mutabakatı aranmaktadır.",
+      "model_version": "2.0.0-quant-primary (Parallel Shadow)",
+      "snapshot_id": "SNAP-MU-1790631436",
+      "as_of": "2026-09-28",
+      "confidence": 0.4675,
+      "data_quality_pct": 95.0,
+      "real_orders_blocked": true,
+      "paper_trade_logged": false,
+      "circuit_breaker_status": "HEALTHY",
+      "circuit_breaker_reason": null,
+      "gate_checks_verified": true,
+      "gate_details": {
+        "same_date_range": true,
+        "same_snapshot_id_logic": true,
+        "same_cost_model": true,
+        "same_initial_capital": true,
+        "same_benchmark": true,
+        "same_position_size": true,
+        "same_frequency": true,
+        "same_raw_schema": true
+      },
+      "model_b_quant": {
+        "symbol": "MU",
+        "asset_class": "us_equities",
+        "as_of": "2026-09-28",
+        "model_version": "2.0.0-quant-primary",
+        "data_quality_pct": 95.0,
+        "raw_quant_score": 0.022,
+        "final_quant_score": 0.022,
+        "confidence": 0.55,
+        "decision": "KAÇIN",
+        "decision_reason_code": "TAIL_RISK_OR_TREND_VETO",
+        "plain_turkish_explanation": "MU için CVaR kritik eşiği aştı (%-10.22); sermaye koruma filtresi gereği KAÇIN kararı verildi.",
+        "kalman": {
+          "filtered_price": 1095.7408,
+          "trend_slope": 6.7081,
+          "trend_acceleration": -11.7788,
+          "measurement_noise": 0.002125,
+          "process_noise": 0.0001,
+          "kalman_confidence": 0.98,
+          "normalized_score": 0.841,
+          "direction": "UP"
+        },
+        "changepoint": {
+          "state": "trend_weakening",
+          "change_point_index": 82,
+          "change_point_date": null,
+          "cusum_statistic": 0.0084,
+          "normalized_score": -0.6
+        },
+        "hurst": {
+          "hurst_exponent": 0.497,
+          "regime": "CHOP_RANDOM",
+          "is_chop_veto": true,
+          "sample_size": 126,
+          "normalized_score": 0.0
+        },
+        "momentum": {
+          "raw_momentum_pct": 12.98,
+          "realized_volatility_pct": 50.41,
+          "vol_adjusted_momentum": 0.892,
+          "normalized_score": 0.419,
+          "horizon_days": 21
+        },
+        "tail_risk": {
+          "ewma_volatility_pct": 69.3,
+          "var_95_pct": -7.02,
+          "cvar_95_pct": -10.22,
+          "skewness": 0.39,
+          "kurtosis": 3.97,
+          "downside_deviation_pct": 53.36,
+          "max_drawdown_historical_pct": -39.1,
+          "is_cvar_veto": true,
+          "risk_penalty": 1.0
+        },
+        "portfolio_impact": {
+          "cluster_name": "US_EQUITIES_CLUSTER",
+          "average_correlation": 0.45,
+          "marginal_cvar_impact_pct": 1.2,
+          "concentration_weight_pct": 15.0,
+          "is_portfolio_veto": false
+        },
+        "macro": {
+          "regime": "RISK_ON",
+          "yield_curve_slope": 0.45,
+          "vix_level": 16.5,
+          "dollar_momentum": -0.5,
+          "normalized_score": 0.65
+        },
+        "timeframe_noise": {
+          "noise_ratio": 0.85,
+          "noise_regime": "NORMAL",
+          "short_term_score": 0.79,
+          "medium_term_score": 0.97,
+          "long_term_score": 1.0,
+          "is_timeframe_conflicted": false,
+          "active_timeframes": [
+            "15m",
+            "1h",
+            "4h",
+            "1d",
+            "1w"
+          ],
+          "timeframe_adaptation_note": "Piyasa gürültüsü dengeli bantta; tüm zaman dilimleri aktif."
+        },
+        "secondary_indicators": {
+          "rsi_14": 57.3,
+          "macd_histogram": 3.27,
+          "ema_trend": "BULLISH",
+          "bollinger_band_pct_b": 0.74,
+          "stochastic_k": 57.3,
+          "aggregate_secondary_score": 0.49,
+          "effective_weight": 0.05,
+          "description": "Klasik göstergeler (RSI, MACD, EMA) yalnızca destekleyici kanıttır; ana kararı değiştiremez."
+        },
+        "veto_flags": {
+          "hurst_chop_veto": true,
+          "cvar_critical_veto": true,
+          "timeframe_conflict_veto": false,
+          "extreme_noise_veto": false,
+          "portfolio_correlation_veto": false,
+          "quant_trend_negative_veto": false
+        }
+      },
+      "model_a_legacy": {
+        "model_name": "Model A (Legacy RSI/MACD/Momentum)",
+        "decision": "BUY",
+        "active_comparison": true,
+        "target_oos_signals_left": 30
+      },
+      "parallel_conflict": true,
+      "crypto_restrictions": null,
+      "entry_price": 1053.97998046875,
+      "stop_loss": 1030.27,
+      "target_price": 1101.41,
+      "risk_reward_ratio": 2.0
+    },
+    {
+      "symbol": "MSFT",
+      "asset_class": "us_equities",
+      "rollout_mode": "SHADOW_PARALLEL",
+      "final_decision": "İZLEME",
+      "decision_badge_class": "bg-amber-500/20 text-amber-300 border border-amber-500/40",
+      "decision_reason_code": "NEUTRAL_QUANT_SCORE",
+      "plain_turkish_explanation": "[ABD PARALEL MOD] Yeni model: İZLEME, Eski model: PASS. MSFT için quant sinyalleri dengeli bölgede; net bir kırılma teyit edilene kadar İZLEME kararı geçerlidir. Piyasa gürültüsü dengeli bantta; tüm zaman dilimleri aktif.",
+      "model_version": "2.0.0-quant-primary (Parallel Shadow)",
+      "snapshot_id": "SNAP-MSFT-1790631437",
+      "as_of": "2026-09-28",
+      "confidence": 0.83,
+      "data_quality_pct": 95.0,
+      "real_orders_blocked": true,
+      "paper_trade_logged": false,
+      "circuit_breaker_status": "HEALTHY",
+      "circuit_breaker_reason": null,
+      "gate_checks_verified": true,
+      "gate_details": {
+        "same_date_range": true,
+        "same_snapshot_id_logic": true,
+        "same_cost_model": true,
+        "same_initial_capital": true,
+        "same_benchmark": true,
+        "same_position_size": true,
+        "same_frequency": true,
+        "same_raw_schema": true
+      },
+      "model_b_quant": {
+        "symbol": "MSFT",
+        "asset_class": "us_equities",
+        "as_of": "2026-09-28",
+        "model_version": "2.0.0-quant-primary",
+        "data_quality_pct": 95.0,
+        "raw_quant_score": 0.336,
+        "final_quant_score": 0.336,
+        "confidence": 0.83,
+        "decision": "İZLEME",
+        "decision_reason_code": "NEUTRAL_QUANT_SCORE",
+        "plain_turkish_explanation": "MSFT için quant sinyalleri dengeli bölgede; net bir kırılma teyit edilene kadar İZLEME kararı geçerlidir. Piyasa gürültüsü dengeli bantta; tüm zaman dilimleri aktif.",
+        "kalman": {
+          "filtered_price": 509.3404,
+          "trend_slope": 3.0155,
+          "trend_acceleration": -0.0284,
+          "measurement_noise": 0.0029,
+          "process_noise": 0.0001,
+          "kalman_confidence": 0.98,
+          "normalized_score": 0.829,
+          "direction": "UP"
+        },
+        "changepoint": {
+          "state": "trend_start",
+          "change_point_index": 83,
+          "change_point_date": null,
+          "cusum_statistic": 0.0047,
+          "normalized_score": 0.8
+        },
+        "hurst": {
+          "hurst_exponent": 0.739,
+          "regime": "TRENDING",
+          "is_chop_veto": false,
+          "sample_size": 126,
+          "normalized_score": 0.6
+        },
+        "momentum": {
+          "raw_momentum_pct": -0.84,
+          "realized_volatility_pct": 24.4,
+          "vol_adjusted_momentum": -0.119,
+          "normalized_score": -0.06,
+          "horizon_days": 21
+        },
+        "tail_risk": {
+          "ewma_volatility_pct": 33.72,
+          "var_95_pct": -3.04,
+          "cvar_95_pct": -3.67,
+          "skewness": 2.17,
+          "kurtosis": 15.42,
+          "downside_deviation_pct": 16.72,
+          "max_drawdown_historical_pct": -23.38,
+          "is_cvar_veto": false,
+          "risk_penalty": 0.464
+        },
+        "portfolio_impact": {
+          "cluster_name": "US_EQUITIES_CLUSTER",
+          "average_correlation": 0.45,
+          "marginal_cvar_impact_pct": 1.2,
+          "concentration_weight_pct": 15.0,
+          "is_portfolio_veto": false
+        },
+        "macro": {
+          "regime": "RISK_ON",
+          "yield_curve_slope": 0.45,
+          "vix_level": 16.5,
+          "dollar_momentum": -0.5,
+          "normalized_score": 0.65
+        },
+        "timeframe_noise": {
+          "noise_ratio": 1.16,
+          "noise_regime": "NORMAL",
+          "short_term_score": 0.55,
+          "medium_term_score": 0.35,
+          "long_term_score": 1.0,
+          "is_timeframe_conflicted": false,
+          "active_timeframes": [
+            "15m",
+            "1h",
+            "4h",
+            "1d",
+            "1w"
+          ],
+          "timeframe_adaptation_note": "Piyasa gürültüsü dengeli bantta; tüm zaman dilimleri aktif."
+        },
+        "secondary_indicators": {
+          "rsi_14": 59.0,
+          "macd_histogram": 1.39,
+          "ema_trend": "BULLISH",
+          "bollinger_band_pct_b": 0.85,
+          "stochastic_k": 59.0,
+          "aggregate_secondary_score": 0.53,
+          "effective_weight": 0.05,
+          "description": "Klasik göstergeler (RSI, MACD, EMA) yalnızca destekleyici kanıttır; ana kararı değiştiremez."
+        },
+        "veto_flags": {
+          "hurst_chop_veto": false,
+          "cvar_critical_veto": false,
+          "timeframe_conflict_veto": false,
+          "extreme_noise_veto": false,
+          "portfolio_correlation_veto": false,
+          "quant_trend_negative_veto": false
+        }
+      },
+      "model_a_legacy": {
+        "model_name": "Model A (Legacy RSI/MACD/Momentum)",
+        "decision": "PASS",
+        "active_comparison": true,
+        "target_oos_signals_left": 30
+      },
+      "parallel_conflict": false,
+      "crypto_restrictions": null,
+      "entry_price": 509.2200012207031,
+      "stop_loss": 497.76,
+      "target_price": 532.13,
+      "risk_reward_ratio": 2.0
+    },
+    {
+      "symbol": "META",
+      "asset_class": "us_equities",
+      "rollout_mode": "SHADOW_PARALLEL",
+      "final_decision": "UYGUN",
+      "decision_badge_class": "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40",
+      "decision_reason_code": "STRONG_QUANT_CONVERGENCE",
+      "plain_turkish_explanation": "[ABD PARALEL MOD] Yeni model: UYGUN, Eski model: BUY. META için Kalman trendi pozitif (eğim: 4.6957), Hurst trend rejimini doğruluyor (H: 0.773) ve kuyruk riski kabul edilebilir seviyede. Bu değerlendirme günlük ve haftalık verilerle üretildi. Kısa vadeli gürültü yüksek olduğu için 1 saatlik göstergelerin ağırlığı azaltıldı.",
+      "model_version": "2.0.0-quant-primary (Parallel Shadow)",
+      "snapshot_id": "SNAP-META-1790631437",
+      "as_of": "2026-09-28",
+      "confidence": 0.73,
+      "data_quality_pct": 95.0,
+      "real_orders_blocked": true,
+      "paper_trade_logged": true,
+      "circuit_breaker_status": "HEALTHY",
+      "circuit_breaker_reason": null,
+      "gate_checks_verified": true,
+      "gate_details": {
+        "same_date_range": true,
+        "same_snapshot_id_logic": true,
+        "same_cost_model": true,
+        "same_initial_capital": true,
+        "same_benchmark": true,
+        "same_position_size": true,
+        "same_frequency": true,
+        "same_raw_schema": true
+      },
+      "model_b_quant": {
+        "symbol": "META",
+        "asset_class": "us_equities",
+        "as_of": "2026-09-28",
+        "model_version": "2.0.0-quant-primary",
+        "data_quality_pct": 95.0,
+        "raw_quant_score": 0.443,
+        "final_quant_score": 0.443,
+        "confidence": 0.73,
+        "decision": "UYGUN",
+        "decision_reason_code": "STRONG_QUANT_CONVERGENCE",
+        "plain_turkish_explanation": "META için Kalman trendi pozitif (eğim: 4.6957), Hurst trend rejimini doğruluyor (H: 0.773) ve kuyruk riski kabul edilebilir seviyede. Bu değerlendirme günlük ve haftalık verilerle üretildi. Kısa vadeli gürültü yüksek olduğu için 1 saatlik göstergelerin ağırlığı azaltıldı.",
+        "kalman": {
+          "filtered_price": 758.9589,
+          "trend_slope": 4.6957,
+          "trend_acceleration": -8.9223,
+          "measurement_noise": 0.0037,
+          "process_noise": 0.0001,
+          "kalman_confidence": 0.98,
+          "normalized_score": 0.845,
+          "direction": "UP"
+        },
+        "changepoint": {
+          "state": "trend_start",
+          "change_point_index": 119,
+          "change_point_date": null,
+          "cusum_statistic": 0.0576,
+          "normalized_score": 0.8
+        },
+        "hurst": {
+          "hurst_exponent": 0.773,
+          "regime": "TRENDING",
+          "is_chop_veto": false,
+          "sample_size": 126,
+          "normalized_score": 0.68
+        },
+        "momentum": {
+          "raw_momentum_pct": 23.9,
+          "realized_volatility_pct": 55.02,
+          "vol_adjusted_momentum": 1.505,
+          "normalized_score": 0.637,
+          "horizon_days": 21
+        },
+        "tail_risk": {
+          "ewma_volatility_pct": 52.86,
+          "var_95_pct": -4.45,
+          "cvar_95_pct": -6.03,
+          "skewness": 0.37,
+          "kurtosis": 5.31,
+          "downside_deviation_pct": 30.52,
+          "max_drawdown_historical_pct": -21.64,
+          "is_cvar_veto": false,
+          "risk_penalty": 0.742
+        },
+        "portfolio_impact": {
+          "cluster_name": "US_EQUITIES_CLUSTER",
+          "average_correlation": 0.45,
+          "marginal_cvar_impact_pct": 1.2,
+          "concentration_weight_pct": 15.0,
+          "is_portfolio_veto": false
+        },
+        "macro": {
+          "regime": "RISK_ON",
+          "yield_curve_slope": 0.45,
+          "vix_level": 16.5,
+          "dollar_momentum": -0.5,
+          "normalized_score": 0.65
+        },
+        "timeframe_noise": {
+          "noise_ratio": 1.48,
+          "noise_regime": "ELEVATED_NOISE",
+          "short_term_score": 1.0,
+          "medium_term_score": 0.77,
+          "long_term_score": 1.0,
+          "is_timeframe_conflicted": false,
+          "active_timeframes": [
+            "15m",
+            "1h",
+            "4h",
+            "1d",
+            "1w"
+          ],
+          "timeframe_adaptation_note": "Bu değerlendirme günlük ve haftalık verilerle üretildi. Kısa vadeli gürültü yüksek olduğu için 1 saatlik göstergelerin ağırlığı azaltıldı."
+        },
+        "secondary_indicators": {
+          "rsi_14": 67.8,
+          "macd_histogram": 5.66,
+          "ema_trend": "BULLISH",
+          "bollinger_band_pct_b": 0.7,
+          "stochastic_k": 67.8,
+          "aggregate_secondary_score": 0.53,
+          "effective_weight": 0.025,
+          "description": "Klasik göstergeler (RSI, MACD, EMA) yalnızca destekleyici kanıttır; ana kararı değiştiremez."
+        },
+        "veto_flags": {
+          "hurst_chop_veto": false,
+          "cvar_critical_veto": false,
+          "timeframe_conflict_veto": false,
+          "extreme_noise_veto": false,
+          "portfolio_correlation_veto": false,
+          "quant_trend_negative_veto": false
+        }
+      },
+      "model_a_legacy": {
+        "model_name": "Model A (Legacy RSI/MACD/Momentum)",
+        "decision": "BUY",
+        "active_comparison": true,
+        "target_oos_signals_left": 30
+      },
+      "parallel_conflict": false,
+      "crypto_restrictions": null,
+      "entry_price": 715.6199951171875,
+      "stop_loss": 699.52,
+      "target_price": 747.82,
+      "risk_reward_ratio": 2.0
+    },
+    {
+      "symbol": "BTC-USD",
+      "asset_class": "crypto",
+      "rollout_mode": "RESEARCH_AND_DATA_ONLY",
+      "final_decision": "YALNIZCA_ARAŞTIRMA",
+      "decision_badge_class": "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40",
+      "decision_reason_code": "CRYPTO_RESEARCH_ONLY_POLICY",
+      "plain_turkish_explanation": "BTC-USD için alım/satım sinyalleri, kaldıraç ve hedef fiyat politikası gereği KAPALIDIR. Bu ekran yalnızca veri doğruluğu, EWMA volatilite ve Kalman trend araştırması amacıyla izleme sunar.",
+      "model_version": "2.0.0-quant-primary (Araştırma Modu)",
+      "snapshot_id": "SNAP-BTC-USD-1790631437",
+      "as_of": "2026-09-28",
+      "confidence": 0.7,
+      "data_quality_pct": 95.0,
+      "real_orders_blocked": true,
+      "paper_trade_logged": false,
+      "circuit_breaker_status": "HEALTHY",
+      "circuit_breaker_reason": null,
+      "gate_checks_verified": true,
+      "gate_details": {
+        "same_date_range": true,
+        "same_snapshot_id_logic": true,
+        "same_cost_model": true,
+        "same_initial_capital": true,
+        "same_benchmark": true,
+        "same_position_size": true,
+        "same_frequency": true,
+        "same_raw_schema": true
+      },
+      "model_b_quant": {
+        "symbol": "BTC-USD",
+        "asset_class": "crypto",
+        "as_of": "2026-09-28",
+        "model_version": "2.0.0-quant-primary",
+        "data_quality_pct": 95.0,
+        "raw_quant_score": 0.13,
+        "final_quant_score": 0.13,
+        "confidence": 0.7,
+        "decision": "KAÇIN",
+        "decision_reason_code": "TAIL_RISK_OR_TREND_VETO",
+        "plain_turkish_explanation": "BTC-USD için Kalman trend yönü belirgin negatif ve quant göstergeler zayıf; pozisyon riski nedeniyle KAÇIN üretildi.",
+        "kalman": {
+          "filtered_price": 84472.6501,
+          "trend_slope": -373.0058,
+          "trend_acceleration": -261.6744,
+          "measurement_noise": 0.0027,
+          "process_noise": 0.0001,
+          "kalman_confidence": 0.98,
+          "normalized_score": -0.708,
+          "direction": "DOWN"
+        },
+        "changepoint": {
+          "state": "trend_start",
+          "change_point_index": 176,
+          "change_point_date": null,
+          "cusum_statistic": 0.0039,
+          "normalized_score": 0.8
+        },
+        "hurst": {
+          "hurst_exponent": 0.645,
+          "regime": "TRENDING",
+          "is_chop_veto": false,
+          "sample_size": 185,
+          "normalized_score": 0.36
+        },
+        "momentum": {
+          "raw_momentum_pct": 10.31,
+          "realized_volatility_pct": 39.17,
+          "vol_adjusted_momentum": 1.117,
+          "normalized_score": 0.507,
+          "horizon_days": 14
+        },
+        "tail_risk": {
+          "ewma_volatility_pct": 35.68,
+          "var_95_pct": -2.63,
+          "cvar_95_pct": -3.58,
+          "skewness": 0.72,
+          "kurtosis": 5.39,
+          "downside_deviation_pct": 18.25,
+          "max_drawdown_historical_pct": -28.71,
+          "is_cvar_veto": false,
+          "risk_penalty": 0.476
+        },
+        "portfolio_impact": {
+          "cluster_name": "CRYPTO_CLUSTER",
+          "average_correlation": 0.45,
+          "marginal_cvar_impact_pct": 1.2,
+          "concentration_weight_pct": 15.0,
+          "is_portfolio_veto": false
+        },
+        "macro": {
+          "regime": "RISK_ON",
+          "yield_curve_slope": 0.45,
+          "vix_level": 16.5,
+          "dollar_momentum": -0.5,
+          "normalized_score": 0.65
+        },
+        "timeframe_noise": {
+          "noise_ratio": 1.08,
+          "noise_regime": "NORMAL",
+          "short_term_score": 0.87,
+          "medium_term_score": 0.38,
+          "long_term_score": 0.99,
+          "is_timeframe_conflicted": false,
+          "active_timeframes": [
+            "15m",
+            "1h",
+            "4h",
+            "1d",
+            "1w"
+          ],
+          "timeframe_adaptation_note": "Piyasa gürültüsü dengeli bantta; tüm zaman dilimleri aktif."
+        },
+        "secondary_indicators": {
+          "rsi_14": 64.8,
+          "macd_histogram": 2.76,
+          "ema_trend": "BULLISH",
+          "bollinger_band_pct_b": 0.69,
+          "stochastic_k": 64.8,
+          "aggregate_secondary_score": 0.5,
+          "effective_weight": 0.05,
+          "description": "Klasik göstergeler (RSI, MACD, EMA) yalnızca destekleyici kanıttır; ana kararı değiştiremez."
+        },
+        "veto_flags": {
+          "hurst_chop_veto": false,
+          "cvar_critical_veto": false,
+          "timeframe_conflict_veto": false,
+          "extreme_noise_veto": false,
+          "portfolio_correlation_veto": false,
+          "quant_trend_negative_veto": true
+        }
+      },
+      "model_a_legacy": null,
+      "parallel_conflict": false,
+      "crypto_restrictions": {
+        "trading_recommendations_disabled": true,
+        "long_short_signals_disabled": true,
+        "leverage_disabled": true,
+        "target_price_disabled": true,
+        "stop_price_disabled": true,
+        "allowed_displays": [
+          "Spot Fiyat & Snapshot Doğrulama",
+          "EWMA & Realized Volatilite",
+          "Kinematik Kalman Filtresi",
+          "Hurst Piyasa Yapısı",
+          "Conformal Tahmin Aralığı (90% Kapsama)",
+          "Tarihsel Backtest Doğrulama Durumu"
+        ]
+      },
+      "entry_price": null,
+      "stop_loss": null,
+      "target_price": null,
+      "risk_reward_ratio": null
+    },
+    {
+      "symbol": "ETH-USD",
+      "asset_class": "crypto",
+      "rollout_mode": "RESEARCH_AND_DATA_ONLY",
+      "final_decision": "YALNIZCA_ARAŞTIRMA",
+      "decision_badge_class": "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40",
+      "decision_reason_code": "CRYPTO_RESEARCH_ONLY_POLICY",
+      "plain_turkish_explanation": "ETH-USD için alım/satım sinyalleri, kaldıraç ve hedef fiyat politikası gereği KAPALIDIR. Bu ekran yalnızca veri doğruluğu, EWMA volatilite ve Kalman trend araştırması amacıyla izleme sunar.",
+      "model_version": "2.0.0-quant-primary (Araştırma Modu)",
+      "snapshot_id": "SNAP-ETH-USD-1790631437",
+      "as_of": "2026-09-28",
+      "confidence": 0.67,
+      "data_quality_pct": 95.0,
+      "real_orders_blocked": true,
+      "paper_trade_logged": false,
+      "circuit_breaker_status": "HEALTHY",
+      "circuit_breaker_reason": null,
+      "gate_checks_verified": true,
+      "gate_details": {
+        "same_date_range": true,
+        "same_snapshot_id_logic": true,
+        "same_cost_model": true,
+        "same_initial_capital": true,
+        "same_benchmark": true,
+        "same_position_size": true,
+        "same_frequency": true,
+        "same_raw_schema": true
+      },
+      "model_b_quant": {
+        "symbol": "ETH-USD",
+        "asset_class": "crypto",
+        "as_of": "2026-09-28",
+        "model_version": "2.0.0-quant-primary",
+        "data_quality_pct": 95.0,
+        "raw_quant_score": 0.111,
+        "final_quant_score": 0.111,
+        "confidence": 0.67,
+        "decision": "KAÇIN",
+        "decision_reason_code": "TAIL_RISK_OR_TREND_VETO",
+        "plain_turkish_explanation": "ETH-USD için Kalman trend yönü belirgin negatif ve quant göstergeler zayıf; pozisyon riski nedeniyle KAÇIN üretildi.",
+        "kalman": {
+          "filtered_price": 2688.3137,
+          "trend_slope": -12.9007,
+          "trend_acceleration": -2.4194,
+          "measurement_noise": 0.002025,
+          "process_noise": 0.0001,
+          "kalman_confidence": 0.98,
+          "normalized_score": -0.744,
+          "direction": "DOWN"
+        },
+        "changepoint": {
+          "state": "trend_start",
+          "change_point_index": 145,
+          "change_point_date": null,
+          "cusum_statistic": 0.0,
+          "normalized_score": 0.8
+        },
+        "hurst": {
+          "hurst_exponent": 0.626,
+          "regime": "TRENDING",
+          "is_chop_veto": false,
+          "sample_size": 185,
+          "normalized_score": 0.32
+        },
+        "momentum": {
+          "raw_momentum_pct": 11.71,
+          "realized_volatility_pct": 36.95,
+          "vol_adjusted_momentum": 1.344,
+          "normalized_score": 0.586,
+          "horizon_days": 14
+        },
+        "tail_risk": {
+          "ewma_volatility_pct": 40.76,
+          "var_95_pct": -3.13,
+          "cvar_95_pct": -4.79,
+          "skewness": 1.35,
+          "kurtosis": 11.76,
+          "downside_deviation_pct": 25.44,
+          "max_drawdown_historical_pct": -35.37,
+          "is_cvar_veto": false,
+          "risk_penalty": 0.579
+        },
+        "portfolio_impact": {
+          "cluster_name": "CRYPTO_CLUSTER",
+          "average_correlation": 0.45,
+          "marginal_cvar_impact_pct": 1.2,
+          "concentration_weight_pct": 15.0,
+          "is_portfolio_veto": false
+        },
+        "macro": {
+          "regime": "RISK_ON",
+          "yield_curve_slope": 0.45,
+          "vix_level": 16.5,
+          "dollar_momentum": -0.5,
+          "normalized_score": 0.65
+        },
+        "timeframe_noise": {
+          "noise_ratio": 0.81,
+          "noise_regime": "NORMAL",
+          "short_term_score": 0.87,
+          "medium_term_score": 0.27,
+          "long_term_score": 1.0,
+          "is_timeframe_conflicted": false,
+          "active_timeframes": [
+            "15m",
+            "1h",
+            "4h",
+            "1d",
+            "1w"
+          ],
+          "timeframe_adaptation_note": "Piyasa gürültüsü dengeli bantta; tüm zaman dilimleri aktif."
+        },
+        "secondary_indicators": {
+          "rsi_14": 63.6,
+          "macd_histogram": 3.21,
+          "ema_trend": "BULLISH",
+          "bollinger_band_pct_b": 0.7,
+          "stochastic_k": 63.6,
+          "aggregate_secondary_score": 0.5,
+          "effective_weight": 0.05,
+          "description": "Klasik göstergeler (RSI, MACD, EMA) yalnızca destekleyici kanıttır; ana kararı değiştiremez."
+        },
+        "veto_flags": {
+          "hurst_chop_veto": false,
+          "cvar_critical_veto": false,
+          "timeframe_conflict_veto": false,
+          "extreme_noise_veto": false,
+          "portfolio_correlation_veto": false,
+          "quant_trend_negative_veto": true
+        }
+      },
+      "model_a_legacy": null,
+      "parallel_conflict": false,
+      "crypto_restrictions": {
+        "trading_recommendations_disabled": true,
+        "long_short_signals_disabled": true,
+        "leverage_disabled": true,
+        "target_price_disabled": true,
+        "stop_price_disabled": true,
+        "allowed_displays": [
+          "Spot Fiyat & Snapshot Doğrulama",
+          "EWMA & Realized Volatilite",
+          "Kinematik Kalman Filtresi",
+          "Hurst Piyasa Yapısı",
+          "Conformal Tahmin Aralığı (90% Kapsama)",
+          "Tarihsel Backtest Doğrulama Durumu"
+        ]
+      },
+      "entry_price": null,
+      "stop_loss": null,
+      "target_price": null,
+      "risk_reward_ratio": null
+    },
+    {
+      "symbol": "SOL-USD",
+      "asset_class": "crypto",
+      "rollout_mode": "RESEARCH_AND_DATA_ONLY",
+      "final_decision": "YALNIZCA_ARAŞTIRMA",
+      "decision_badge_class": "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40",
+      "decision_reason_code": "CRYPTO_RESEARCH_ONLY_POLICY",
+      "plain_turkish_explanation": "SOL-USD için alım/satım sinyalleri, kaldıraç ve hedef fiyat politikası gereği KAPALIDIR. Bu ekran yalnızca veri doğruluğu, EWMA volatilite ve Kalman trend araştırması amacıyla izleme sunar.",
+      "model_version": "2.0.0-quant-primary (Araştırma Modu)",
+      "snapshot_id": "SNAP-SOL-USD-1790631438",
+      "as_of": "2026-09-28",
+      "confidence": 0.75,
+      "data_quality_pct": 95.0,
+      "real_orders_blocked": true,
+      "paper_trade_logged": false,
+      "circuit_breaker_status": "HEALTHY",
+      "circuit_breaker_reason": null,
+      "gate_checks_verified": true,
+      "gate_details": {
+        "same_date_range": true,
+        "same_snapshot_id_logic": true,
+        "same_cost_model": true,
+        "same_initial_capital": true,
+        "same_benchmark": true,
+        "same_position_size": true,
+        "same_frequency": true,
+        "same_raw_schema": true
+      },
+      "model_b_quant": {
+        "symbol": "SOL-USD",
+        "asset_class": "crypto",
+        "as_of": "2026-09-28",
+        "model_version": "2.0.0-quant-primary",
+        "data_quality_pct": 95.0,
+        "raw_quant_score": 0.282,
+        "final_quant_score": 0.282,
+        "confidence": 0.75,
+        "decision": "İZLEME",
+        "decision_reason_code": "NEUTRAL_QUANT_SCORE",
+        "plain_turkish_explanation": "SOL-USD için quant sinyalleri dengeli bölgede; net bir kırılma teyit edilene kadar İZLEME kararı geçerlidir. Piyasa gürültüsü dengeli bantta; tüm zaman dilimleri aktif.",
+        "kalman": {
+          "filtered_price": 121.7086,
+          "trend_slope": 0.073,
+          "trend_acceleration": -0.9495,
+          "measurement_noise": 0.00225,
+          "process_noise": 0.0001,
+          "kalman_confidence": 0.98,
+          "normalized_score": 0.119,
+          "direction": "FLAT"
+        },
+        "changepoint": {
+          "state": "trend_start",
+          "change_point_index": 173,
+          "change_point_date": null,
+          "cusum_statistic": 0.0192,
+          "normalized_score": 0.8
+        },
+        "hurst": {
+          "hurst_exponent": 0.656,
+          "regime": "TRENDING",
+          "is_chop_veto": false,
+          "sample_size": 185,
+          "normalized_score": 0.39
+        },
+        "momentum": {
+          "raw_momentum_pct": 22.03,
+          "realized_volatility_pct": 59.93,
+          "vol_adjusted_momentum": 1.559,
+          "normalized_score": 0.653,
+          "horizon_days": 14
+        },
+        "tail_risk": {
+          "ewma_volatility_pct": 55.3,
+          "var_95_pct": -3.39,
+          "cvar_95_pct": -4.85,
+          "skewness": 0.63,
+          "kurtosis": 4.51,
+          "downside_deviation_pct": 24.54,
+          "max_drawdown_historical_pct": -36.12,
+          "is_cvar_veto": false,
+          "risk_penalty": 0.703
+        },
+        "portfolio_impact": {
+          "cluster_name": "CRYPTO_CLUSTER",
+          "average_correlation": 0.45,
+          "marginal_cvar_impact_pct": 1.2,
+          "concentration_weight_pct": 15.0,
+          "is_portfolio_veto": false
+        },
+        "macro": {
+          "regime": "RISK_ON",
+          "yield_curve_slope": 0.45,
+          "vix_level": 16.5,
+          "dollar_momentum": -0.5,
+          "normalized_score": 0.65
+        },
+        "timeframe_noise": {
+          "noise_ratio": 0.9,
+          "noise_regime": "NORMAL",
+          "short_term_score": 1.0,
+          "medium_term_score": 0.75,
+          "long_term_score": 1.0,
+          "is_timeframe_conflicted": false,
+          "active_timeframes": [
+            "15m",
+            "1h",
+            "4h",
+            "1d",
+            "1w"
+          ],
+          "timeframe_adaptation_note": "Piyasa gürültüsü dengeli bantta; tüm zaman dilimleri aktif."
+        },
+        "secondary_indicators": {
+          "rsi_14": 66.9,
+          "macd_histogram": 5.24,
+          "ema_trend": "BULLISH",
+          "bollinger_band_pct_b": 0.74,
+          "stochastic_k": 66.9,
+          "aggregate_secondary_score": 0.54,
+          "effective_weight": 0.05,
+          "description": "Klasik göstergeler (RSI, MACD, EMA) yalnızca destekleyici kanıttır; ana kararı değiştiremez."
+        },
+        "veto_flags": {
+          "hurst_chop_veto": false,
+          "cvar_critical_veto": false,
+          "timeframe_conflict_veto": false,
+          "extreme_noise_veto": false,
+          "portfolio_correlation_veto": false,
+          "quant_trend_negative_veto": false
+        }
+      },
+      "model_a_legacy": null,
+      "parallel_conflict": false,
+      "crypto_restrictions": {
+        "trading_recommendations_disabled": true,
+        "long_short_signals_disabled": true,
+        "leverage_disabled": true,
+        "target_price_disabled": true,
+        "stop_price_disabled": true,
+        "allowed_displays": [
+          "Spot Fiyat & Snapshot Doğrulama",
+          "EWMA & Realized Volatilite",
+          "Kinematik Kalman Filtresi",
+          "Hurst Piyasa Yapısı",
+          "Conformal Tahmin Aralığı (90% Kapsama)",
+          "Tarihsel Backtest Doğrulama Durumu"
+        ]
+      },
+      "entry_price": null,
+      "stop_loss": null,
+      "target_price": null,
+      "risk_reward_ratio": null
+    }
+  ]
+}

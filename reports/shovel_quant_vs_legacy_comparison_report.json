@@ -1,0 +1,317 @@
+{
+  "us_equities": {
+    "model_a_legacy": {
+      "overall": {
+        "total_trades": 181,
+        "hit_rate_pct": 55.8,
+        "net_return_pct": 43.67,
+        "cagr_pct": 15.6,
+        "sharpe": 1.06,
+        "sortino": 1.94,
+        "max_drawdown_pct": -7.1,
+        "calmar": 2.2,
+        "total_costs_pct": 12.67
+      },
+      "in_sample": {
+        "total_trades": 130,
+        "hit_rate_pct": 58.46,
+        "net_return_pct": 29.75,
+        "cagr_pct": 10.98,
+        "sharpe": 1.15,
+        "sortino": 1.86,
+        "max_drawdown_pct": -5.91,
+        "calmar": 1.86,
+        "total_costs_pct": 9.1
+      },
+      "out_of_sample": {
+        "total_trades": 51,
+        "hit_rate_pct": 49.02,
+        "net_return_pct": 10.73,
+        "cagr_pct": 4.16,
+        "sharpe": 0.89,
+        "sortino": 2.12,
+        "max_drawdown_pct": -3.32,
+        "calmar": 1.25,
+        "total_costs_pct": 3.57
+      }
+    },
+    "model_b_quant_primary": {
+      "overall": {
+        "total_trades": 50,
+        "hit_rate_pct": 58.0,
+        "net_return_pct": 0.62,
+        "cagr_pct": 0.25,
+        "sharpe": 0.12,
+        "sortino": 0.18,
+        "max_drawdown_pct": -5.63,
+        "calmar": 0.04,
+        "total_costs_pct": 3.5
+      },
+      "in_sample": {
+        "total_trades": 42,
+        "hit_rate_pct": 69.05,
+        "net_return_pct": 4.04,
+        "cagr_pct": 1.6,
+        "sharpe": 0.87,
+        "sortino": 1.26,
+        "max_drawdown_pct": -4.13,
+        "calmar": 0.39,
+        "total_costs_pct": 2.94
+      },
+      "out_of_sample": {
+        "total_trades": 8,
+        "hit_rate_pct": 0.0,
+        "net_return_pct": -3.29,
+        "cagr_pct": -1.33,
+        "sharpe": -5.67,
+        "sortino": -5.67,
+        "max_drawdown_pct": -3.29,
+        "calmar": -0.4,
+        "total_costs_pct": 0.56
+      },
+      "by_regime": {
+        "TRENDING": {
+          "total_trades": 50,
+          "hit_rate_pct": 58.0,
+          "net_return_pct": 0.62,
+          "cagr_pct": 0.25,
+          "sharpe": 0.12,
+          "sortino": 0.18,
+          "max_drawdown_pct": -5.63,
+          "calmar": 0.04,
+          "total_costs_pct": 3.5
+        },
+        "CHOP_RANDOM": {
+          "total_trades": 0,
+          "hit_rate_pct": 0.0,
+          "net_return_pct": 0.0,
+          "sharpe": 0.0,
+          "sortino": 0.0,
+          "max_drawdown_pct": 0.0,
+          "calmar": 0.0,
+          "total_costs_pct": 0.0
+        },
+        "VOLATILE": {
+          "total_trades": 0,
+          "hit_rate_pct": 0.0,
+          "net_return_pct": 0.0,
+          "sharpe": 0.0,
+          "sortino": 0.0,
+          "max_drawdown_pct": 0.0,
+          "calmar": 0.0,
+          "total_costs_pct": 0.0
+        }
+      }
+    }
+  },
+  "bist_equities": {
+    "model_a_legacy": {
+      "overall": {
+        "total_trades": 131,
+        "hit_rate_pct": 51.15,
+        "net_return_pct": 13.67,
+        "cagr_pct": 5.26,
+        "sharpe": 0.66,
+        "sortino": 1.23,
+        "max_drawdown_pct": -5.03,
+        "calmar": 1.04,
+        "total_costs_pct": 17.03
+      },
+      "in_sample": {
+        "total_trades": 78,
+        "hit_rate_pct": 48.72,
+        "net_return_pct": 0.58,
+        "cagr_pct": 0.23,
+        "sharpe": 0.07,
+        "sortino": 0.11,
+        "max_drawdown_pct": -5.93,
+        "calmar": 0.04,
+        "total_costs_pct": 10.14
+      },
+      "out_of_sample": {
+        "total_trades": 53,
+        "hit_rate_pct": 54.72,
+        "net_return_pct": 13.01,
+        "cagr_pct": 5.01,
+        "sharpe": 1.4,
+        "sortino": 3.1,
+        "max_drawdown_pct": -2.87,
+        "calmar": 1.75,
+        "total_costs_pct": 6.89
+      }
+    },
+    "model_b_quant_primary": {
+      "overall": {
+        "total_trades": 56,
+        "hit_rate_pct": 57.14,
+        "net_return_pct": 5.85,
+        "cagr_pct": 2.3,
+        "sharpe": 0.68,
+        "sortino": 1.31,
+        "max_drawdown_pct": -4.21,
+        "calmar": 0.55,
+        "total_costs_pct": 7.28
+      },
+      "in_sample": {
+        "total_trades": 37,
+        "hit_rate_pct": 54.05,
+        "net_return_pct": -2.3,
+        "cagr_pct": -0.93,
+        "sharpe": -0.47,
+        "sortino": -0.73,
+        "max_drawdown_pct": -4.69,
+        "calmar": -0.2,
+        "total_costs_pct": 4.81
+      },
+      "out_of_sample": {
+        "total_trades": 19,
+        "hit_rate_pct": 63.16,
+        "net_return_pct": 8.34,
+        "cagr_pct": 3.26,
+        "sharpe": 2.4,
+        "sortino": 6.47,
+        "max_drawdown_pct": -1.78,
+        "calmar": 1.83,
+        "total_costs_pct": 2.47
+      },
+      "by_regime": {
+        "TRENDING": {
+          "total_trades": 56,
+          "hit_rate_pct": 57.14,
+          "net_return_pct": 5.85,
+          "cagr_pct": 2.3,
+          "sharpe": 0.68,
+          "sortino": 1.31,
+          "max_drawdown_pct": -4.21,
+          "calmar": 0.55,
+          "total_costs_pct": 7.28
+        },
+        "CHOP_RANDOM": {
+          "total_trades": 0,
+          "hit_rate_pct": 0.0,
+          "net_return_pct": 0.0,
+          "sharpe": 0.0,
+          "sortino": 0.0,
+          "max_drawdown_pct": 0.0,
+          "calmar": 0.0,
+          "total_costs_pct": 0.0
+        },
+        "VOLATILE": {
+          "total_trades": 0,
+          "hit_rate_pct": 0.0,
+          "net_return_pct": 0.0,
+          "sharpe": 0.0,
+          "sortino": 0.0,
+          "max_drawdown_pct": 0.0,
+          "calmar": 0.0,
+          "total_costs_pct": 0.0
+        }
+      }
+    }
+  },
+  "crypto": {
+    "model_a_legacy": {
+      "overall": {
+        "total_trades": 137,
+        "hit_rate_pct": 43.07,
+        "net_return_pct": -1.85,
+        "cagr_pct": -0.74,
+        "sharpe": -0.03,
+        "sortino": -0.07,
+        "max_drawdown_pct": -10.76,
+        "calmar": -0.07,
+        "total_costs_pct": 35.62
+      },
+      "in_sample": {
+        "total_trades": 95,
+        "hit_rate_pct": 47.37,
+        "net_return_pct": 9.99,
+        "cagr_pct": 3.88,
+        "sharpe": 0.43,
+        "sortino": 0.99,
+        "max_drawdown_pct": -8.59,
+        "calmar": 0.45,
+        "total_costs_pct": 24.7
+      },
+      "out_of_sample": {
+        "total_trades": 42,
+        "hit_rate_pct": 33.33,
+        "net_return_pct": -10.76,
+        "cagr_pct": -4.45,
+        "sharpe": -2.58,
+        "sortino": -2.95,
+        "max_drawdown_pct": -10.9,
+        "calmar": -0.41,
+        "total_costs_pct": 10.92
+      }
+    },
+    "model_b_quant_primary": {
+      "overall": {
+        "total_trades": 17,
+        "hit_rate_pct": 35.29,
+        "net_return_pct": -1.54,
+        "cagr_pct": -0.62,
+        "sharpe": -0.65,
+        "sortino": -1.04,
+        "max_drawdown_pct": -3.18,
+        "calmar": -0.19,
+        "total_costs_pct": 4.42
+      },
+      "in_sample": {
+        "total_trades": 13,
+        "hit_rate_pct": 30.77,
+        "net_return_pct": -1.7,
+        "cagr_pct": -0.68,
+        "sharpe": -0.84,
+        "sortino": -1.42,
+        "max_drawdown_pct": -3.18,
+        "calmar": -0.22,
+        "total_costs_pct": 3.38
+      },
+      "out_of_sample": {
+        "total_trades": 4,
+        "hit_rate_pct": 50.0,
+        "net_return_pct": 0.17,
+        "cagr_pct": 0.07,
+        "sharpe": 0.78,
+        "sortino": 1.75,
+        "max_drawdown_pct": -0.34,
+        "calmar": 0.2,
+        "total_costs_pct": 1.04
+      },
+      "by_regime": {
+        "TRENDING": {
+          "total_trades": 17,
+          "hit_rate_pct": 35.29,
+          "net_return_pct": -1.54,
+          "cagr_pct": -0.62,
+          "sharpe": -0.65,
+          "sortino": -1.04,
+          "max_drawdown_pct": -3.18,
+          "calmar": -0.19,
+          "total_costs_pct": 4.42
+        },
+        "CHOP_RANDOM": {
+          "total_trades": 0,
+          "hit_rate_pct": 0.0,
+          "net_return_pct": 0.0,
+          "sharpe": 0.0,
+          "sortino": 0.0,
+          "max_drawdown_pct": 0.0,
+          "calmar": 0.0,
+          "total_costs_pct": 0.0
+        },
+        "VOLATILE": {
+          "total_trades": 0,
+          "hit_rate_pct": 0.0,
+          "net_return_pct": 0.0,
+          "sharpe": 0.0,
+          "sortino": 0.0,
+          "max_drawdown_pct": 0.0,
+          "calmar": 0.0,
+          "total_costs_pct": 0.0
+        }
+      }
+    }
+  }
+}

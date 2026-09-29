@@ -75,13 +75,21 @@ Most retail backtests suffer from over-optimism. Shovel applies institutional **
 
 ---
 
-## 📊 Live Terminal Preview
+## 🌐 Live Web Terminal (GitHub Pages)
+
+The interactive quantitative terminal is live and hosted directly on GitHub Pages with zero installation required:
+
+👉 **[Launch Shovel Live Terminal](https://necatcihans.github.io/shovel/)**
+
+---
+
+## 📊 Local Preview
 
 The terminal is written in pure vanilla HTML5, TailwindCSS, and JavaScript with zero external backend dependencies required for rendering:
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/shovel.git
+git clone https://github.com/necatcihans/shovel.git
 cd shovel
 
 # Open the terminal in your default browser
